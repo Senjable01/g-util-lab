@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "G Util Lab",
+  "version": "1.0.0",
+  "description": "個人用・実験用のChrome拡張機能 (Chrome extensions for personal or experimental use)",
+  "permissions": [
+    "contextMenus",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
